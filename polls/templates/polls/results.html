@@ -1,0 +1,13 @@
+{% block title %}What's new?{% endblock %}
+
+{% block content %}
+<h1>What's new?</h1>
+
+<ul>
+  {% for choice in question.choice_set.all %}
+    <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
+  {% endfor %}
+</ul>
+
+<p><a href="{% url 'polls:detail' question.id %}">Vote again?</a></p>
+{% endblock %}
