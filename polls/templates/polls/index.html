@@ -1,11 +1,8 @@
-{% extends "polls/base.html" %}
-{% load static %}
-
-{% block title %}
+{% extends "polls/base.html" %}{% load static %}{% block title %}
 <h1>최근 질문</h1>
-{% endblock %}
+{% endblock %} {% block content %}
 
-{% block content %}
+
 {% if latest_question_list %}
   <ul>
     {% for question in latest_question_list %}
@@ -19,4 +16,5 @@
 {% else %}
   <p>질문이 없습니다.</p>
 {% endif %}
+
 {% endblock %}

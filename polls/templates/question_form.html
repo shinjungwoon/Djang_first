@@ -1,0 +1,26 @@
+{% extends "polls/base.html" %} {% block title %} 질문 작성/수정 {% endblock %}
+{% block content %}
+<h2>질문 입력</h2>
+<form method="post">
+  {% csrf_token %} {{ form.as_p }}
+
+
+  <button type="submit">저장</button>
+</form>
+{% endblock %}
+<!-- {% comment %}
+<p>
+<label for = {{question_text}}>질문:</label>
+{{question_text}}
+{{question_text.errors}}
+</p>
+
+<p>
+<label for = {{pub_date}}>게시일:</label>
+{{pub_date}}
+{{pub_date.errors}}
+</p>
+{% endcomment %} -->
+
+<!-- <button type = "submit">저장</button>
+</form> -->

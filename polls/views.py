@@ -8,6 +8,7 @@ from django.db.models import F
 from django.urls import reverse
 from django.views import generic
 from django.http import HttpResponseRedirect
+from django.urls import reverse_lazy
 
 # def index(request):
 #     # return HttpResponse("Hello, world. You're at the polls index.")
@@ -49,19 +50,32 @@ class ResultsView(generic.DetailView):
   context_object_name = "question"
 # 투표 처리 로직
 def vote(request, question_id):
-    question = get_object_or_404(Question, pk=question_id)
-    try:
-        selected_choice = question.choice_set.get(pk=request.POST["choice"])
-    except (KeyError, Choice.DoesNotExist):
-        return render(
-            request,
-            "polls/detail.html",
-            {
-                "question": question,
-                "error_message":"You didn't select a choice.",
-            },
-        )
-    else:
-        selected_choice.votes = F("votes") + 1
-        selected_choice.save()
-        return HttpResponseRedirect(reverse("polls:results", args=(question.id,)))
+  question = get_object_or_404(Question, pk=question_id)
+  try:
+      selected_choice = question.choice_set.get(pk=request.POST["choice"])
+  except (KeyError, Choice.DoesNotExist):
+      return render(
+          request,
+          "polls/detail.html",
+          {
+              "question": question,
+              "error_message":"You didn't select a choice.",
+          },
+      )
+  else:
+      selected_choice.votes = F("votes") + 1
+      selected_choice.save()
+      return HttpResponseRedirect(reverse("polls:results", args=(question.id,)))
+
+class QuestionCreateView(generic.CreateView):
+    model = Question
+    fields = ["question_text", "pub_date"]
+    template_name = "polls/question_from.html"
+    success_url = reverse_lazy("polls:index")
+
+class QuestionUpdateView(generic.UpdateView):
+  pass
+
+class QuestionDeleteView(generic.DeleteView):
+  pass              
+    
