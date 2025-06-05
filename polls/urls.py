@@ -18,7 +18,7 @@ urlpatterns = [
     path("<int:question_id>/vote/", views.vote, name="vote"),
     
     # CRUD URLs
-    path("create/", views.QuestionCreateView.as_view(), name = "question_create"),
-    path("<int:pk>/수정/", views.QuestionUpdateView.as_view(), name = "question_update"),
-    path("<int:pk>/삭제/", views.QuestionDeleteView.as_view(), name = "question_delete"),
+    path("create/", views.QuestionCreateView.as_view(), name="question_create"),
+    path("<int:pk>/update/", views.QuestionUpdateView.as_view(), name="question_update"),
+    path("<int:pk>/delete/", views.QuestionDeleteView.as_view(), name="question_delete"),
 ]

@@ -1,0 +1,16 @@
+{% extends "polls/base.html" %} 
+
+{% block title %} 질문 삭제 {% endblock %}
+
+{% block content %}
+<h2>정말 삭제</h2>
+<p>{{object.question_text}}</p>
+<form method="post">
+  {% csrf_token %}
+
+
+
+  <button type="submit">삭제</button>
+  <a href="{% url 'polls:index' %}">삭제취소</a>
+</form>
+{% endblock %}
