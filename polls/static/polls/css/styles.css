@@ -1,0 +1,14 @@
+/*icon*/
+.header {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ margin: 20px 0;
+ gap: 10px;
+ margin-bottom: 1em;
+}
+ 
+.heading-with-icon .icon {
+ width: 50px;
+ height: 50px;
+}

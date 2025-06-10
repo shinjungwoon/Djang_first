@@ -1,12 +1,7 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <title>{% block title %}Polls{% endblock %}</title>
-  <link rel="stylesheet" href="{% static 'polls/index.css' %}">
-  <link rel="stylesheet" href="{% static 'polls/detail.css' %}">
-</head>
+{% include "polls/head.html" %}
 <body>
   {% include "polls/header.html" %}
 
