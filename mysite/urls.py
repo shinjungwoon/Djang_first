@@ -12,6 +12,7 @@ urlpatterns = [
     path("accounts/", include("django.contrib.auth.urls")),
     #127.0.0.1:8000
     ]
+
 if settings.DEBUG:
     import debug_toolbar
     urlpatterns += [

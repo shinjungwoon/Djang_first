@@ -1,0 +1,8 @@
+{% extends "admin/base.html" %}
+{% block branding %}
+<div id="site-name">
+	<a href="{% url 'admin:index' %}">Polls Administration</a>
+</div>
+<a href="{% url 'admin:index' %}">Admin Home</a>
+<a href="{% url 'index' %}">Site Home</a>
+{% endblock %}
