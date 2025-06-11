@@ -39,9 +39,9 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    'polls',
-    'accounts',
-    'debug_toolbar',               # 추가
+    "polls",
+    "accounts",
+    "debug_toolbar",               # 추가
 ]
 
 MIDDLEWARE = [
@@ -135,6 +135,6 @@ INTERNAL_IPS = [
     "127.0.0.1",
 ]
 
-STATICFILES_DIRS = [
-    BASE_DIR / "static",
-]
+# STATICFILES_DIRS = [
+#     BASE_DIR / "static",
+# ]
